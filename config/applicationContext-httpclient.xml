@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+		<property name="locations">  
+			<list>  
+                 <value>classpath:system.properties</value>  
+            </list>  
+        </property>  
+	</bean>
+	 
+	<bean id="baseService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/BaseService" />
+    	<property name="serviceInterface" value="com.dy.core.service.BaseService" />
+    </bean>
+
+	<bean id="systemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/SystemService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.SystemService" />
+    </bean> 
+    
+    <bean id="contentService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/ContentService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.ContentService" />
+    </bean> 
+    
+    <bean id="loanService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/LoanService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.LoanService" />
+    </bean> 
+    
+    <bean id="financeService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/FinanceService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.FinanceService" />
+    </bean> 
+    
+    <bean id="memberService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/MemberService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.MemberService" />
+    </bean> 
+    
+    <bean id="accountService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/AccountService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.AccountService" />
+    </bean> 
+    
+    <bean id="repayService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/RepayService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.RepayService" />
+    </bean>
+    
+    <bean id="trustReturnService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/TrustReturnService" />
+    	<property name="serviceInterface" value="com.dy.baf.service.trust.TrustReturnService" />
+    </bean>
+    <bean id="trustNotifyService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/TrustNotifyService" />
+    	<property name="serviceInterface" value="com.dy.baf.service.trust.TrustNotifyService" />
+    </bean>
+    <bean id="trustRequestService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/TrustRequestService" />
+    	<property name="serviceInterface" value="com.dy.baf.service.trust.TrustRequestService" />
+    </bean>
+    <bean id="mallService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/MallService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.MallService" />
+    </bean>
+    <bean id="wechatService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/WechatService" />
+    	<property name="serviceInterface" value="com.dy.httpinvoker.WechatService" />
+    </bean>
+    <bean id="commonService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/CommonService" />
+    	<property name="serviceInterface" value="com.dy.baf.service.system.CommonService" />
+    </bean>
+    <bean id="vipService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/VipService" />
+    	<property name="serviceInterface" value="com.dy.baf.service.system.VipService" />
+    </bean>
+    <bean id="fnTenderService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    	<property name="serviceUrl" value="${SERVER_URL}/FnTenderService" />
+    	<property name="serviceInterface" value="com.dy.baf.service.loan.FnTenderService" />
+    </bean>
+</beans>

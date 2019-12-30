@@ -1,0 +1,971 @@
+@charset "utf-8";
+/**************
+	@description:用户中心;
+	@Author:ray;
+	@create date:2015-05-11;
+***************/
+.page-user{
+	//首页 start
+	.user-index{
+		.icon{
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			vertical-align: top;
+			background: url(images/icon-user.png) no-repeat;
+			background-size: 72px auto;
+			margin: 2px 2px 0 0;
+		}
+		.icon-total{
+			background-position: -19px 0px;
+		}
+		.icon-income{
+			background-position: -38px 0px;
+		}
+		.icon-pay{
+			width: 34px;
+			height: 34px;
+			background-position: 0px -18px;
+			margin: 0;
+		}
+		.icon-take{
+			width: 34px;
+			height: 28px;
+			background-position: -38px -18px;
+			margin: 5px 0 0 0;
+		}		
+		.icon-invest{
+			background-position: 0px -57px;
+		}
+		.icon-record{
+			background-position: -29px -57px;
+		}
+		.icon-spread{
+			background-position: 0px -88px;
+		}
+		.icon-account{
+			background-position: -31px -85px;
+		}
+	}
+	.user-data{
+		background-color: #FFF;
+		padding: 15px;
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 15px;
+		.user-data-row{	
+			display: block;		
+			line-height: 1.5;
+			color: #666;
+			overflow: hidden;
+			position: relative;
+			.name{				
+				font-size: 14px;
+				color: #333;
+				line-height: 21px;
+			}
+			.val{
+				color: #ff8208;
+				font-size: 20px;
+				font-weight: 100;
+				height: 30px;
+				line-height: 30px;
+			}			
+		}
+		.user-data-rate{
+			height: 98px;
+			margin-bottom: 15px;
+			border-bottom: 1px solid #ededed;			
+			text-align: center;
+			.val{
+				height: 60px;
+				line-height: 60px;
+				font-size: 40px;
+			}
+			.next{
+				color: #e4e4e4;
+				font-size: 30px;
+				position: absolute;
+				right: 20px;
+				top: 20px;
+			}
+		}
+		.user-data-total,
+		.user-data-income{
+			width: 50%;
+			height: 51px;
+			float: left;
+			padding-left: 5px;
+		}
+		.user-data-total{
+			position: relative;
+			&::after{
+				content:" ";
+				width: 1px;
+				height: 100%;
+				background-color: #e5e5e5;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+		.user-data-income{		
+			padding-left: 20px;			
+		}		
+	}
+
+	.user-opts{
+		overflow: hidden;
+		padding: 20px 0;
+		background-color: #fff;
+		margin-bottom: 15px;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;		
+		li{
+			width: 50%;
+			float: left;
+			text-align: center;
+			position: relative;
+			padding: 0 20px;			
+			a{
+				display: block;
+			}
+			span{
+				display: block;
+				font-size: 15px;
+				color: #333;
+				padding-top: 5px;				
+			}
+			&:first-child::after{
+				content:" ";
+				width: 1px;
+				height: 100%;
+				background-color: #e5e5e5;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+
+	.user-nav{
+		background-color: #FFF;
+		padding: 0 15px;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 15px;
+
+		.item-title{ 
+			font-size: 15px;
+			color: #666;
+		}
+		.item-content{
+			overflow: hidden;
+			padding: 20px 0;
+			line-height: 30px;
+			position: relative;
+			&:first-child::after{
+				content:" ";
+				width: 100%;
+				height: 1px;				
+				border-bottom: 1px solid #e4e4e4;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			.item{
+				padding-left: 40px;
+				position: relative;
+				a:active,a:visited{
+					color: #008def;
+				}
+				.icon{
+					width: 28px;
+					height: 28px;
+					position: absolute;
+					left: 5px;
+				}
+				dt{
+					font-size: 16px;
+					font-weight: normal;
+				}
+				dd{
+					font-size: 10px;
+					color: #999;
+					margin-top: 4px;				
+					a{
+						font-size: 12px;
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+
+	//首页 end
+
+	.user-safe{
+		text-align: center;
+		padding: 30px 10px;
+		overflow: hidden;
+		.col{
+			padding: 0;
+		}
+		.icon{
+			display: block;
+			width: 76px;
+			height: 76px;
+			border-radius: 76px;
+			margin: 0 auto;
+			background-image: url(../images/icon-safe.png);
+			background-repeat: no-repeat;
+			background-size: 290px auto;
+			&.icon-user{
+				background-color: #02d9af;
+				background-position: 0% 0%;
+			}
+			&.icon-pay{
+				background-color: #ffab3a;
+				background-position: 50% 100%;
+			}
+			&.disable{
+				background-color: #ccc;
+			}
+		}
+		.title{
+			font-size: 16px;
+			color: #666;
+			padding: 5px 0;
+		}
+		.state{
+			color: #999;
+		}
+	}
+
+	//我的投资
+	.loans{
+		padding: 15px 0;		
+		.loan-list{
+			border-top: 1px solid #ededed;
+			border-bottom: 1px solid #ededed;
+			padding: 0 10px;
+			background-color: #FFF;
+		}
+		.loan-item{
+			padding: 10px 0;
+			border: 0;
+			border-top: 1px solid #ededed;
+			margin: -1px 0 0;
+		}
+		.loan-head{
+			padding: 5px 0 3px;
+			overflow: hidden;	
+			.title{
+				color: #333;
+				font-size: 16px;
+				float: left;
+			}
+			.time{
+				float: right;
+				margin-right: 22px;
+				color: #ccc;
+			}
+		}
+		.loan-content{
+			padding: 0px;
+			.name{
+				padding: 0;
+			}
+			.val{
+				font-size: 14px;
+			}
+			.val-price{
+				color: #ffae00;
+			}
+			.val-state{
+				color: #59bbff;
+			}
+		}
+		.loan-foot{
+			border: 0;
+			margin-top: 15px;
+		}
+		.loan-log{
+			.loan-content{
+				font-size: 13px;
+				.title{
+					font-size: 16px;
+					color: #333;
+				}
+				.time{
+					float: right;
+					color: #ccc;
+					font-size: 12px;
+				}
+				.col-center{
+					padding: 8px 0; 
+				}
+				.new_freeze{
+					color: #ffae00;
+				}
+				.un_freeze{
+					color: #59bbff;
+				}
+				.income{
+					color: #ffae00;
+				}
+				.expend{
+					color: #64d0b6;
+				}
+			}
+		}
+	}
+
+
+	//银行列表
+	.bank-list{
+		.item-content{
+			display: block;
+			overflow: hidden;
+			border-bottom: 1px solid #e4e4e4;
+			padding: 8px 0 6px;
+		}
+		.item-media{
+			float: left;
+			display: inline;
+			margin: 0 15px;
+			img{
+				width: 34px;
+				height: 34px;
+			}
+		}
+		.item-title{
+			line-height: 34px;
+			font-size: 16px;
+			color: #333;
+		}
+	}
+
+	//支付提示
+	.pay-result{
+		margin: 10px;
+		.bd{
+			font-size: 15px;
+			line-height: 2;
+		}
+		.fd{
+			padding-top: 10px;
+			.btn{
+				width: 48%;
+				font-size: 16px;
+			}
+		}
+	}
+
+	//收款详情
+	.receive-table{
+		border: 1px solid #e4e4e4;
+		.thead .tr{			
+			padding: 8px 15px;
+		}
+		.tbody .fr{
+			text-align: right;
+		}
+		.tfoot .tr{
+			margin: 0 15px;
+			padding: 8px 0;
+		}
+	}
+
+	//我的银行卡
+	.user-bank{
+		.bank-card{
+			display: block;
+			background-color: #36acfe;
+			color: #FFF;
+			border-radius: 10px;
+			padding: 15px 20px;
+			font-size: 28px;
+			.bank-name{ 
+				font-size: 0.7em; 
+				line-height: 1.5em;				
+			}
+			.bank-num{ 
+				font-size: 1em; 
+				line-height: 1.2em;
+				padding: 25px 0;
+			}
+			.bank-user{ 
+				font-size: 0.5em; 
+			}
+			a{
+				color: #fff;
+			}
+		}
+		.bank-add{
+			text-align: center;
+			background-color: #FFF;
+			color: #ccc;
+			.iconfont{
+				display: block;
+				font-size: 2.5em;
+				line-height: 1em;
+				margin-top: 0.4em;
+			}
+			.name{
+				display: block;
+				font-size: 0.6em;
+				line-height: 2em;
+				margin-bottom: 0.8em;
+			}
+		}
+		.bank-change{
+			padding: 8px 5px;
+			text-align: right;
+			a{
+				font-size: 12px;
+				color: #999;
+			}
+		}
+		.list-block{
+			.list-title{ 
+				color: #999; 
+			}
+			.item-right{ 
+				font-size: 13px; 
+				padding-right: 10px;
+			}
+			.item-input .txt{
+				text-align: right;
+				padding: 8px 35px 8px 0px;
+			}
+			.item-arrow{
+				right: 15px;
+			}
+		}
+	}
+	@media screen and (max-width: 380px){ 
+		.user-bank .bank-card{ 
+			font-size: 28px;
+		}
+	}
+	@media screen and (max-width: 370px){ 
+		.user-bank .bank-card{ 
+			font-size: 23px;
+		} 
+	}
+
+	//资金详情
+	.wealth-data{
+		background-color: #008def;
+		padding: 20px 15px;
+		.user-data-row{			
+			line-height: 1.5;
+			color: #fff;
+			overflow: hidden;
+			position: relative;
+			padding-bottom: 15px;		
+			text-align: center;
+			.name{				
+				font-size: 14px;
+				line-height: 21px;
+				padding-top: 10px;
+			}
+			.val{
+				height: 60px;
+				line-height: 60px;
+				font-size: 40px;
+				font-weight: 100;
+			}
+			.iconfont{
+				margin-right: 3px;
+				font-size: 18px;
+			}		
+		}
+	}
+	.wealth-detail{
+		padding: 0px 40px 50px;
+		ul{
+			border-left: 1px solid #d8d8d8;
+			padding-top: 5;
+		}
+		li{
+			line-height: 24px;
+			padding-top: 25px;
+			position: relative;	
+			bottom: -5px;		
+			.icon{
+				width: 18px;
+				height: 20px;
+				position: absolute;
+				background-image: url(images/icon-wealth.png);
+				background-size: 100% auto;
+				left: -10px;
+				bottom: 3px;
+				&.i1{
+					background-position: 0px 0px;
+				}
+				&.i2{
+					background-position: 0px -20px;
+				}
+				&.i3{
+					background-position: 0px -40px;
+				}
+				&.i4{
+					background-position: 0px -60px;
+				}
+				&.i5{
+					background-position: 0px -80px;
+				}
+			}
+			.name{
+				color: #666;
+				padding: 0 10px 0 15px;
+				float: left;
+			}
+			.val{
+				color: #333;
+				font-size: 20px;
+				vertical-align: top;
+				float: left;
+			}
+			.unit{
+				color: #999;
+				float: right;
+			}
+		}
+	}
+
+	//账户详情
+	.user-details{
+		.icon{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			vertical-align: top;
+			background: url(images/icon-user3.png) no-repeat;
+			background-size: 100% auto;
+			margin: 12px 8px 0 0;
+		}
+		.icon-user{ background-position: 0px 0px; }
+		.icon-bank{ background-position: 0px -21px; }
+		.icon-cust{ background-position: 0px -42px; }
+
+		.icon-phone{ background-position: 0px -63px; }
+		.icon-email{ background-position: 0px -84px; }
+		.icon-real{ background-position: 0px -105px; }
+		.icon-data{ background-position: 0px -126px; }
+
+		.icon-pass{ background-position: 0px -147px; }
+		.icon-pass2{ background-position: 0px -168px; }
+		.icon-pass3{ background-position: 0px -189px; }
+	}
+
+	//用户信息
+	.user-info{
+		.user-box{
+			padding-top: 32px;
+			position: relative;
+			background-color: #008def;
+			border-bottom: 1px solid #e1e1e1;
+			.hd{
+				height: 44px;
+				line-height: 44px;			
+				padding-left: 115px;
+				background-color: #008def;
+				.avatar{
+					width: 82px;
+					height: 82px;
+					border-radius: 82px;
+					border: 2px solid #FFF;
+					position: absolute; 
+					bottom: 15px;
+					left: 18px;
+					img{
+						width: 100%;
+						height: 100%;
+						border-radius: 100%;
+					}
+					.avatar-file,
+					.avatar-loading{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						border-radius: 100%;
+						left: 0%;
+						top: 0%;
+						overflow: hidden;
+					}
+					.avatar-file{
+						@include opacity(0);
+					}
+					.avatar-loading{
+						line-height: 80px;
+						font-size: 12px;
+						background: rgba(0, 0, 0, 0.8);
+						color: #FFF;
+						text-align: center;
+						display: none;
+					}
+				}
+				.name{
+					font-size: 18px;
+					color: #FFF;
+					margin-right: 5px;
+				}
+				.leve{
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+					background: url(images/icon-v3.png) no-repeat;
+					background-size: 100% auto;
+					vertical-align: middle;
+				}
+			}
+			.bd{
+				height: 54px;
+				padding-left: 90px;
+				padding-right: 20px;
+				background-color: #FFF;
+				overflow: hidden;
+				li{
+					width: 50%;
+					height: 36px;
+					float: left;
+					text-align: center;
+					margin-top: 9px;
+					&:first-child{
+						border-right: 1px solid #e1e1e1;
+					}
+				}
+				.val{
+					display: block;
+					font-size: 14px;
+					color: #333;
+				}
+				.tit{
+					display: block;
+					font-size: 12px;
+					color: #999;
+				}
+				.leve{
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+					background: url(images/icon-hr.png) no-repeat;
+					background-size: 100% auto;
+					vertical-align: top;
+				}
+			}
+		}
+
+		.icon{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			vertical-align: top;
+			background: url(images/icon-user2.png) no-repeat;
+			background-size: 100% auto;
+			margin: 12px 8px 0 0;
+		}
+		.icon-company{
+			background-position: 0px -21px;
+		}
+		.icon-asset{
+			background-position: 0px -42px;
+		}
+	}
+	
+}
+
+//系统设置
+.page-settings{
+	.icon{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		vertical-align: top;
+		background: url(images/icon-settings.png) no-repeat;
+		background-size: 100% auto;
+		margin: 12px 8px 0 0;
+	}
+	.icon-comm{ background-position: 0px 0px; }
+	.icon-ques{ background-position: 0px -22px; }
+	.icon-cust{ background-position: 0px -45px; }
+	.icon-vers{ background-position: 0px -67px; }
+	.hotline{
+		position: fixed;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		text-align: center;
+		background-color: #FFF;
+		z-index: 1060;
+		display: none;
+		.hd{
+			margin: 0 20px;
+			border-bottom: 1px solid #e1e1e1;
+			h4{
+				font-size: 14px;
+			}
+			h5{
+				font-size: 12px;
+			}
+		}
+		.bd{
+			height: 56px;
+			line-height: 56px;
+			.tel{
+				display: block;
+				font-size: 18px;
+				font-family: arial;
+			}
+		}
+		.fd .btn{
+			border-top: 2px solid #8f8f92;
+			color: #333;
+			font-size: 15px;
+			padding: 10px 16px;
+		}
+	}
+}
+
+//我的债权
+.page-transfer{
+	.transfer-info{
+		background-color: #FFF;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		margin: 15px 0;
+		padding: 15px;
+		dt{
+			font-weight: normal;
+			font-size: 15px;
+		}
+		dd{
+			line-height: 28px;
+			padding-top: 5px;
+			.name{
+				color: #999;
+				padding-right: 30px;
+				font-size: 13px;
+			}
+		}
+	}
+
+	.loan-tabs{
+		background-color: #FFF;
+		overflow: hidden;
+		padding: 20px 8px 0;
+		margin-bottom: 15px;
+		.hd{
+			overflow: hidden;
+			border-radius: 8px;
+			height: 30px;
+			line-height: 29px;
+			border: 1px solid #008def;
+			li{
+				float: left;
+				width: 50%;
+				text-align: center;
+				border-left: 1px solid #008def;
+				font-size: 12px;
+				&:first-child{
+					border-left: 0;
+				}
+				&.on{
+					background-color: #008def;
+					color: #FFF;
+				}
+			}
+		}
+		.bd{
+			padding: 15px 10px 0;
+			font-size: 13px;
+			min-height: 100px;
+			p{
+				text-indent: 2em;
+				color: #666;
+				img{
+					margin-left: -2em; 
+				}
+			}
+			img{ 
+				max-width: 100%;
+			}			
+		}
+		.bd-item{
+			display: none;
+			&.on{
+				display: block;
+			}
+		}
+		.bd-list{
+			.row{
+				display: block;
+				color: #333;
+				margin: 0;
+				border-bottom: 1px solid #ededed;
+				padding: 8px 0;
+				font-size: 12px;
+				text-align: center;
+				.s-1{ color: #59bbff; }
+				.s1{ color: #ffc000; }
+				.s2{ color: #d3d3d3; }				
+			}			
+			.row-head{
+				font-size: 13px;
+				.name{
+					padding-left: 12px;
+				}
+				.time{
+					color: #333;
+				}
+			}
+			.row-foot{
+				margin-top: 20px;
+				.txt-cent{
+					font-size: 10px;
+					color: #999;
+				}
+			}
+		}
+	}
+
+	.transfer-buy{
+		.loan{
+			padding: 15px;
+			background-color: #FFF;
+			margin: 15px 0;
+			.hd{
+				overflow: hidden;
+				margin-bottom: 10px;
+				.tit{
+					width: 50%;
+					height: 19px;
+					float: left;
+					font-size: 16px;
+					overflow: hidden;
+				}
+				.rig{
+					font-size: 10px;
+					float: right;
+				}
+			}
+			.bd{
+				overflow: hidden;
+				li{
+					font-size: 13px;
+					line-height: 24px;
+					.name{
+						color: #999;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+		.look{
+			text-align: right;
+			font-size: 12px;
+			color: #999;
+			padding: 0 15px;
+			a{
+				color: #333;
+			}
+		}
+		.list-block{
+			margin: 15px 0;
+			li{
+				border: 0;
+			}
+			.item-title{
+				padding-left: 15px;
+				font-size: 14px;
+				float: left;
+			}
+		}
+		.item-text{
+			padding: 0 15px;
+			.name{
+				color: #999;
+	  			font-size: 10px;
+			}
+			.val{
+				font-size: 12px;
+			}
+		}
+		.loan-repay{
+			background-color: #FFF;
+			margin: 15px 0;
+			.hd{
+				height: 42px;
+				line-height: 42px;
+				text-align: center;
+				font-size: 16px;
+				padding-bottom: 5px;
+			}
+			.bd{
+				padding: 0 18px;
+				dl{
+					border-top: 1px solid #ededed;
+					padding: 15px 0;
+				}
+				dt{
+					font-size: 16px;
+					font-weight: normal;
+					margin-bottom: 3px;
+				}
+				dd{
+					line-height: 28px;
+				}
+				.name{
+					color: #999;
+					padding-right: 10px;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}
+
+//提现
+.page-cash{
+ 	.list-block .item-bank{
+		height: 65px;
+		padding: 10px 0;
+		.icon{
+			width: 45px;
+			height: 45px;
+			float: left;
+			margin: 0 20px;
+			img{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.name{
+			line-height: 24px;
+			color: #333;
+			font-size: 16px;
+		}
+		.number{
+			line-height: 24px;
+			color: #999;
+		}
+	}
+	.loan-content .col-xs-12{
+		padding: 4px 0;
+		.v-1{
+			color: #ff5959;
+		}
+		.v-2{
+			color: #ffae00;
+		}
+		.v-3{
+			color: #999;
+		}
+		.v1{
+			color: #59bbff;
+		}
+	}
+}

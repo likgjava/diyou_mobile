@@ -1,0 +1,56 @@
+@charset "utf-8";
+/**************
+	@description:about;
+	@Author:Monkey;
+	@create date:2015-05-12;
+***************/
+.about .btn{
+	width:32%;
+}
+.about-list{
+	padding: 15px;
+	.about-cont{
+		line-height: 2;
+		color: #666;
+		text-indent: 2em;
+	}
+	ul li{
+		position: relative;
+		margin: 15px 0;
+		padding: 12px;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+		i.icon{
+			position:absolute;
+			top: 15px;
+			left: 12px;
+			width: 48px;
+			height: 48px;		
+		}
+		i.icon-1{
+			background: url(images/icon-1.png) no-repeat;
+			background-size: 100%;
+		}
+		i.icon-2{
+			background: url(images/icon-2.png) no-repeat;
+			background-size: 100%;
+		}
+		i.icon-3{
+			background: url(images/icon-3.png) no-repeat;
+			background-size: 100%;
+		}
+		dl{
+			padding-left: 60px;
+			color: #666;
+			margin: 15px 0 -8px;
+			dt{
+				margin: 0;
+				font-size: 16px;
+				font-weight: bold;
+				padding-bottom: 5px;
+			}
+			dd{
+				margin: 8px 0;
+			}
+		}
+	}
+}

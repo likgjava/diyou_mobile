@@ -1,0 +1,164 @@
+@charset "utf-8";
+/******************
+ *description: 首页样式
+ *author:ray;
+ *create date:2015-05-07;
+*******************/
+
+.slider{
+	//height: 0;
+	position: relative;
+	overflow: hidden;
+	@include transition(all 0.5s ease-in-out);	
+	.hd{
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		text-align: center;
+		li{
+			display: inline-block;
+			height: 8px;
+			width: 8px;
+			margin-right: 8px;
+			line-height: 30px;			
+			background-color: #D0D0D0;			
+			overflow: hidden;
+			@include border-radius(8px);
+			@include transition(all 0.3s);
+			&.on{
+				width: 16px;
+				background-color: #FFF;
+			}
+		}
+	}
+	.bd img{ 
+		width: 100%; 
+		display: block;
+	}
+}
+
+.loan-plan{
+	padding: 25px 15px 35px;
+	margin: 20px 0 10px;
+	background-color: #FFF;
+	.loan-title{
+		color: #666;
+		font-size: 24px;
+		text-align: center;
+		line-height: 36px;
+	}
+	.loan-opts{
+		padding: 30px 0;
+		text-align: center;
+		overflow: hidden;
+		li{
+			width: 33.333333%;
+			float: left;
+			padding: 0 10px;
+		}
+		.btn{
+			width: 100%;
+			padding: 5px 0;
+			border: 1px solid #ff4e55;
+			color: #ff4e55;
+		}
+		.btn2{
+			border: 1px solid #fb8835;
+			color: #fb8835;
+		}
+		.btn3{
+			border: 1px solid #0ecd9e;
+			color: #0ecd9e;
+		}
+	}
+	.loan-rate{		
+		font-size: 16px;
+		text-align: center;
+		.val{
+			color: #fd6361;
+			display: block;
+			padding: 20px 0 10px;
+			b{ 
+				font-size: 60px;
+				font-weight: normal; 
+			}
+		}
+		.name{
+			color: #333;
+		}
+	}
+}
+
+.new-trailer{
+	padding-top: 20px;
+	background-color: #fff;
+	margin-top: 23px;
+	position: relative;
+	.bd{
+		border-bottom: 1px solid #ededed;
+		.w42{
+			width: 42% !important;
+		}
+		dl dt{
+		  display: inline-block;
+		  width: 27%;
+		  text-align: right;
+		  padding-top: 15px;
+		  font-weight: normal;
+		  padding-bottom: 10px;
+		  b{
+           font-size: 16px;
+           font-weight: bold;
+		  }
+		  span{
+
+		  }
+		  .year{
+		  	font-size: 12px;
+		  	color: #999;
+		  	font-weight: normal;
+		  	padding-top: 10px;
+		  }
+		}
+	}
+	.bt{
+		padding: 0px 10px;
+		overflow: hidden;
+		p{
+			display: inline-block;
+			margin-top: 15px;
+			height: 15px;
+			line-height: 15px;
+			color: #999;
+			font-size: 10px;
+			overflow: hidden;
+			.icon{
+				background: url(../images/new_icon.png) no-repeat;
+				width: 15px;
+				height: 15px;
+				display: inline-block;
+                vertical-align: top;
+                margin-right: 5px;
+                background-size: 100%;
+			}
+			.pos-icon{
+				background-position: 0px bottom;
+			}
+		}
+	}
+	.lbox-tit{
+		position: absolute;
+		top: 10px;
+		left: 0px;
+		background: url(../images/new_tri.png)no-repeat;
+		background-size:100% 100%;
+		width: 22px;
+		height: 72px;
+		text-align: center;
+		color: #fff;
+		font-size: 12px;
+		line-height: 16px;
+	}
+}

@@ -1,0 +1,1 @@
+<jsp:forward page="wap/index/index" />

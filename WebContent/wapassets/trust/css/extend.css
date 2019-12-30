@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/*** css扩展样式    ***/
+.fs10{font-size:10px;}
+.layer .layer-alert {display: inline-block;}
+.new-trailer .bd dl dt b em{ font-size:14px; font-weight:normal;font-style: normal;}
+.loan-content .val b{ font-size:15px;}
+.loan-content .val b em{ font-size:12px;font-style: normal}
+.transfer-list .loan-content .c1{ width:30%;}
+.transfer-list .loan-content .c2{ width:19%;}
+.transfer-list .loan-content .c3{ width:26%;}
+.transfer-list .loan-content .c4{ width:25%;}
+.nav-top .email{position: absolute; left: 5px; top: 0; color: #FFF; padding: 0 10px;}
+.nav-top .email .iconfont{font-size: 26px;}
+.nav-top .email .num{position: absolute; display: block; width: 20px; line-height: 20px; text-align: center; background-color: #f74b4a; color: #fff; right: 0px; top: 5px; font-size: 12px; border-radius: 50%;}
+.tender-view .loan-tabs .bd .loan-item-content p img{margin-left: 0em;}
+.page-content{padding: 0px 0px 50px;}
+.nav-top+.page .page-content{padding: 45px 0px 50px;}
+
+/*****wap 端 计算器*******/
+.layer-overlay{z-index: 5558;}
+.layer{z-index: 15000;}
+.ui-counter .bd li.w100{ width:100%;}
+.ui-counter .bd li .name,.ui-counter .bd li .val{ display:inline;}
+
+img{max-width: 100%;text-indent: inherit;}
+/*
+用户中心添加开通托管的提示 */
+.user-nopen{width: 94%;margin:20px auto; text-align: center;border: 1px solid #f52626;
+    background-color: #ffecec;    box-shadow: 1px 0 3px #F5B3B3;}
+.user-nopen, .user-open {height: 35px;line-height: 35px;margin-bottom: 15px;padding: 0 10px;}
+
+
+/* 我的红包 */
+.page-user .user-index .icon-redbag {
+    background-position: 0px -118px;
+}
+.page-bounty{width:100%;}
+.page-bounty ul{width:90%;margin:0 5%;}
+.page-bounty ul li.undefalut{width:100%;background:url(/wapassets/trust/css/images/bountybg.png) no-repeat;margin-top:15px;padding:15px 0;  no-repeat; background-size:100% 100%; display:inline-block;}
+.page-bounty ul li.defalut{width:100%;background:url(/wapassets/trust/css/images/bountybg1.png) no-repeat;margin-top:15px;padding:15px 0;  no-repeat; background-size:100% 100%; display:inline-block;}
+
+.page-bounty ul li.used{width:100%;background:url(/wapassets/trust/css/images/bountybg2.png) no-repeat;margin-top:15px;padding:15px 0;  background-size:100% 100%; display:inline-block;}
+.page-bounty ul li .lileft{width:35%;float:left;display:inline-block; text-align: center;}
+.page-bounty ul li .liright{width:65%;float:right;display:inline-block;}
+.page-bounty ul li.freeze{width:100%;background:url(/wapassets/trust/css/images/bountybg3.png) no-repeat;margin-top:15px;padding:15px 0;  background-size:100% 100%; display:inline-block;}
+.letop{margin-top:10px;}
+.letop .dw{font-size: 12px;color:#fff;}
+.letop .rednumber{font-size: 22px;color:#fff;font-weight: bold;}
+.lebot{font-size: 15px;color:#fff;margin-top:10px;}
+.liright .toptit{font-size: 12px;color:#333;width:100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;display:inline-block;}
+.liright .toptime{font-size: 10px;color:#666; text-align: right;margin:20px 15px 0 0;}
+
+select.bountysel{ color:#955feb!important;text-align: right!important;}
+.fd1 {border-top: 1px solid #8f8f92!important;}
+.fd1 .bountytips{width:70%;float:left;display:inline-block;text-align:left !important;line-height:40px;margin-left:10px;}
+.btn-check{font-size: 12px!important;margin-top: 5px!important;display: inline-block;}
+.page-bounty ul li.on{background:url(/wapassets/trust/css/images/selectbounty.png) no-repeat!important;width:100%!important;margin-top:15px!important;padding:15px 0!important;background-size:100% 100%!important; display:inline-block!important;}
+
+ .hotline .page-content{height:257px!important;overflow-y: auto!important; padding: 30px 0px 40px!important;}
+
+
+/* 新用户中心 */
+.new-index{
+    background: #f6f7fb;
+}
+.nav-top{
+    background: #3793f7;
+}
+.nav-top .avatar{
+    font-size: 0.4rem;
+    margin-left: 0.3rem;
+}
+.nav-top .email{
+    right: 5px;
+    left: initial;
+}
+.nav-top .email .newIconfont{
+    font-size: 0.4rem;
+}
+.nav-top .name{
+    position: absolute;
+    left: 0.8rem;
+}
+
+.page-user .user-data .user-data-row .val{
+    color: #fff;
+}
+.page-user .user-data {
+    background: #3793f7;
+    color: #fff;
+    padding: 15px 0 0;
+    margin-bottom: 0;
+}
+.page-user .user-data .user-data-row .name{
+    color: #fff;
+}
+.page-user .user-data .user-data-row{
+    padding: 0.2rem 0;
+}
+.page-user .user-data .user-data-row.new-row{
+    background: #2f7dd2;
+}
+.page-user .user-data .user-data-row .name .newIconfont{
+    font-size: 0.14rem;
+}
+.page-user .user-data .user-data-rate{
+    border-bottom: none;
+}
+.page-user .user-data .user-data-row .name, .page-user .user-data .user-data-row .val{
+    text-align: center;
+}
+.page-user .btns{
+    border-top: none;
+    border-bottom: none;
+    padding: 0.15rem 0.15rem 0.15rem 0.3rem;
+}
+.page-user .btns li{
+    padding: 0;
+}
+.page-user .btns li:first-child::after{
+    display: none;
+}
+.page-user .btns li a{
+    width: 2.8rem;
+    height: 0.85rem;
+    line-height: 0.85rem;
+    text-align: center;
+    color: #656d78;
+    border: solid 1px #656d78;
+    border-radius: 5px;
+    font-size: 0.36rem;
+}
+.page-user .btns li a.recharge{
+    color: #3793f7;
+    border: solid 1px #3793f7;
+}
+.user-nav{
+    padding: 0 0.2rem;
+}
+.user-nav li{
+    line-height: 0.9rem;
+    height: 0.9rem;
+    font-size: 0.3rem;
+    border-bottom: solid 1px #ddd;
+}
+.page-user .user-nav{
+    border-bottom: none;
+}
+.user-nav a{
+    color: #656d78;
+    display: block;
+}
+.user-nav .left-icon{
+    font-size: 0.4rem;
+    margin-right: 0.2rem;
+}
+.avatars{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 7px;
+}
+.banner .bd img{
+    width: 100%;
+}

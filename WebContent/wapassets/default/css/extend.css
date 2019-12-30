@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*** css扩展样式    ***/
+.fs10{font-size:10px;}
+.layer .layer-alert {display: inline-block;}
+.nav-top .email{position: absolute; left: 5px; top: 0; color: #FFF; padding: 0 10px;}
+.nav-top .email .iconfont{font-size: 26px;}
+.nav-top .email .num{position: absolute; display: block; width: 20px; line-height: 20px; text-align: center; background-color: #f74b4a; color: #fff; right: 0px; top: 5px; font-size: 12px; border-radius: 50%;}
+.page-content{padding: 0px 0px 50px;}
+.nav-top+.page .page-content{padding: 45px 0px 50px;}
+
+/*****wap 端 计算器*******/
+.layer-overlay{z-index: 5558;}
+.layer{z-index: 15000;}
+.ui-counter .bd li.w100{ width:100%;}
+.ui-counter .bd li .name,.ui-counter .bd li .val{ display:inline;}
+
+img{max-width: 100%;text-indent: inherit;}
+
+/* 我的红包 */
+.page-user .user-index .icon-redbag {
+    background-position: 0px -118px;
+}
+.page-bounty{width:100%;}
+.page-bounty ul{width:90%;margin:0 5%;}
+.page-bounty ul li.undefalut{width:100%;background:url(/wapassets/default/css/images/bountybg.png) no-repeat;margin-top:15px;padding:15px 0;  no-repeat; background-size:100% 100%; display:inline-block;}
+.page-bounty ul li.defalut{width:100%;background:url(/wapassets/default/css/images/bountybg1.png) no-repeat;margin-top:15px;padding:15px 0;  no-repeat; background-size:100% 100%; display:inline-block;}
+
+.page-bounty ul li.used{width:100%;background:url(/wapassets/default/css/images/bountybg2.png) no-repeat;margin-top:15px;padding:15px 0;  background-size:100% 100%; display:inline-block;}
+.page-bounty ul li .lileft{width:35%;float:left;display:inline-block; text-align: center;}
+.page-bounty ul li .liright{width:65%;float:right;display:inline-block;}
+.letop{margin-top:5px;}
+.letop .dw{font-size: 12px;color:#fff;}
+.letop .rednumber{font-size: 22px;color:#fff;font-weight: bold;}
+.lebot{font-size: 15px;color:#fff;margin-top:10px;}
+.liright .toptit{font-size: 12px;color:#333;width:100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;display:inline-block;}
+.liright .toptime{font-size: 10px;color:#666; text-align: right;margin:20px 15px 0 0;}
+
+select.bountysel{ color:#955feb!important;text-align: right!important;}
+.fd1 {border-top: 1px solid #8f8f92!important;}
+.fd1 .bountytips{width:70%;float:left;display:inline-block;text-align:left !important;line-height:40px;margin-left:10px;}
+.btn-check{font-size: 12px!important;margin-top: 5px!important;display: inline-block;}
+.page-bounty ul li.on{background:url(/wapassets/default/css/images/selectbounty.png) no-repeat!important;width:100%!important;margin-top:15px!important;padding:15px 0!important;background-size:100% 100%!important; display:inline-block!important;}
+
+ .hotline .page-content{height:257px!important;overflow-y: auto!important; padding: 30px 0px 40px!important;}

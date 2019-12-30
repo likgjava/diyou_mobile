@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/*
+@decription: 公用头部底部样式
+@auther: xihun
+@create date: 2016-06-07;
+@version: v1.0
+*/
+/* line 12, ../../sass/mod/_reset.scss */
+html {
+  color: #333;
+  background: #fff;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+/* line 18, ../../sass/mod/_reset.scss */
+html * {
+  outline: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 24, ../../sass/mod/_reset.scss */
+html, body {
+  height: 100%;
+  font-family: "microsoft yahei",Arial,Helvetica,sans-serif;
+}
+
+/* line 29, ../../sass/mod/_reset.scss */
+body, dl, dd, p, form {
+  margin: 0;
+}
+
+/* line 32, ../../sass/mod/_reset.scss */
+ol, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 37, ../../sass/mod/_reset.scss */
+em, i {
+  font-style: normal;
+}
+
+/* line 40, ../../sass/mod/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* line 44, ../../sass/mod/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 48, ../../sass/mod/_reset.scss */
+a {
+  color: #666;
+  text-decoration: none;
+  outline: none;
+}
+/* line 52, ../../sass/mod/_reset.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 57, ../../sass/mod/_reset.scss */
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+/* line 61, ../../sass/mod/_reset.scss */
+input, select, button, textarea {
+  outline: 0;
+}
+
+/* line 64, ../../sass/mod/_reset.scss */
+input[type=submit], input[type=button] {
+  border: none;
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot");
+  src: url("../fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff") format("woff"), url("../iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg");
+}
+/* line 21, ../../sass/mod/_iconfont.scss */
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 28, ../../sass/mod/layout.scss */
+.fn-clear:before, .fn-clear:after {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+
+/* line 33, ../../sass/mod/layout.scss */
+.fn-clear:after {
+  clear: both;
+}
+
+/* line 34, ../../sass/mod/layout.scss */
+.fn-clear {
+  *zoom: 1;
+}

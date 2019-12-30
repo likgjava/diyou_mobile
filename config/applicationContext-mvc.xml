@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd	
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<mvc:annotation-driven />	
+	<mvc:default-servlet-handler />
+	
+	<context:component-scan base-package="com.dy"/>
+	<!-- 对静态资源文件的访问 -->  
+	<mvc:resources mapping="/js/**" location="/,/js/" />
+	<mvc:resources mapping="/images/**" location="/,/images/" />
+	<mvc:resources mapping="/assest/**" location="/,/assets/" />
+
+	<!-- 访问拦截  -->  
+  	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/**"/>
+			<mvc:exclude-mapping path="/**/*.js"/>
+			<mvc:exclude-mapping path="/**/*.css"/>
+			<mvc:exclude-mapping path="/**/*.png"/>
+			<mvc:exclude-mapping path="/**/*.gif"/>
+			<mvc:exclude-mapping path="/**/*.jpg"/>
+			<mvc:exclude-mapping path="/**/*.jpeg"/>
+			<bean class="com.dy.baf.interceptor.LoginHandlerInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+		<property name="locations">  
+			<list>  
+                 <value>classpath:system.properties</value>  
+            </list>  
+        </property>  
+	</bean>
+	<bean id="trustConfig" class="java.util.HashMap">  
+        <constructor-arg>  
+	       <map>  
+	         <entry key="0" value="jsp/wapviews/default" />
+	         <entry key="1" value="jsp/wapviews/trust" />  
+	       </map>  
+	    </constructor-arg>  
+    </bean> 
+	<!-- 配置SpringMVC的视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/#{trustConfig['${trust.enable}']}/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- Exception -->
+	<bean id="handlerExceptionResolver" class="com.dy.baf.user.exception.UserExceptionResolver" />
+	<bean id="messageConverter" class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
+	
+	<!-- I18N -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	    <property name="basenames">
+	    	<list>
+	    		<value>message</value>
+	    	</list> 
+	    </property> 
+	    <property name="useCodeAsDefaultMessage" value="true" />           
+	</bean>
+	
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+	</mvc:interceptors>
+	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+	
+	<!-- 上传拦截，如最大上传值及最小上传值 -->
+  	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">   
+		<property name="maxUploadSize">    
+        	<value>104857600</value>
+        </property>
+        <property name="maxInMemorySize">
+        	<value>0</value>
+        </property>
+        <property name="defaultEncoding">
+        	<value>UTF-8</value>
+        </property> 
+	</bean>
+</beans>

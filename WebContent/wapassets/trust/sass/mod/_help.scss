@@ -1,0 +1,148 @@
+@charset "utf-8";
+/**************
+	@description:帮助中心;
+	@Author:Monkey;
+	@create date:2015-05-08;
+***************/
+.topbar{
+	background-color: #FFF;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	.btn{
+		border: 0;
+		height: 46px;			
+		font-size: 16px;
+		border-radius: 0;
+		color: #333;
+		width: 49%;
+		box-shadow:none;
+
+		span{
+			display: inline-block;
+			padding: 0 10px;
+			line-height: 39px;
+		}
+		&.active{
+			background: 0;
+			color: #1a9fdb;
+			border:0;
+			span{ 
+				border-bottom: 2px solid #1a9fdb; 
+			}				
+		}
+	}
+}
+
+.artice-list{
+	padding: 15px;
+	li{
+		border: 1px solid #e4e4e4;
+		overflow: hidden;
+		margin-bottom: 15px;			
+		background-color: #FFF;
+		a{
+			display: block;
+			padding: 0 12px;
+			&.active-state{ background: rgba(0, 122, 255, 0.15); }
+		}
+		.tit{
+			color: #1a9fdb;
+			font-size: 16px;
+			padding: 10px 0 5px;
+		}
+		.opt{				
+			.time{
+				position:relative;
+				padding-left: 25px;
+				background-size: auto 100%;
+				margin-right: 20px;
+				color: #999;
+			}
+			.click{
+				position:relative;
+				padding-left: 28px;
+				background-size: auto 100%;
+				color: #999;
+			}
+			.iconfont{ 
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 20;
+				text-align: center;
+				height: 20px;
+				line-height: 20px;
+				width: 20px;
+				font-size: 21px;
+				color: #999999;
+				
+			}
+		}
+		.rem{
+			padding: 10px 0 20px;
+			color: #666;
+		}
+	}
+	a.btn-more{
+		font-size: 17px;
+		height: 43px;
+		line-height: 30px;
+		border: 1px solid #e4e4e4;
+		border-radius: 3px;
+		background-color: #FFF;
+		color: #ccc;
+	}
+}
+.artice-view{
+	overflow: hidden;
+	.hd{
+		text-align: center;
+		border-bottom: 1px solid #e4e4e4;
+		padding-bottom: 20px;
+
+		.tit{
+			font-size: 20px;
+			color: #1a9fdb;
+			padding: 20px 0 10px;
+		}
+		.from{
+			color: #b5b5b5;
+			padding-bottom: 10px;
+		}
+		.opt{				
+			.time{
+				position:relative;
+				padding-left: 25px;
+				background-size: auto 100%;
+				margin-right: 20px;
+				color: #999;
+			}
+			.click{
+				position:relative;
+				padding-left: 28px;
+				background-size: auto 100%;
+				color: #999;
+			}
+			.iconfont{ 
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 20;
+				text-align: center;
+				height: 20px;
+				line-height: 20px;
+				width: 20px;
+				font-size: 21px;
+				color: #999999;
+				
+			}
+		}
+	}
+	.bd{
+		padding: 0 20px;
+		font-size: 15px;
+		color: #666;
+		p{
+			margin: 1em 0;
+		}
+	}
+}

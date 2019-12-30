@@ -1,0 +1,200 @@
+<nav class="nav-top navbar-fixed-top">
+    <div class="container">
+      <a onclick="history.go(-1)" class="go-back"><span class="iconfont">&#xe604;</span></a>
+      <span>投资详情</span>
+    </div>
+</nav>
+<section ng-controller="loanContentCtrl">
+    <div class="page-content">
+      <div class="tender-view">
+        <div class="loan">
+            <div class="loan-content loan-details">
+              <div class="tit"><i class="iconfont">&#xe60e;</i>预期年化收益</div>
+              <div class="rate">
+                <span class="r1"><b ng-bind="loan_info.apr"></b>%</span>
+                <span ng-if="loan_info.award_proportion>0" class="r2" ng-bind="'+'+loan_info.award_proportion+'%'"></span>
+                <span ng-if="loan_info.award_amount>0" class="r2" ng-bind="'+'+loan_info.award_amount+'%'"></span>
+                <i class="ico" ng-if="loan_info.award_status != -1">奖</i>
+              </div>
+            </div>
+            <div class="loan-foot">
+              <span class="com col-xs-8" ><i class="iconfont">&#xe60f;</i>担保方：<span ng-bind="loan_info.vouch_company_info || '厦门帝网信息科技有限公司'"></span></span>
+              <span class="num col-xs-4"><i class="iconfont icon-num">&#xe611;</i>投资人数：<span ng-bind="tender_count"></span></span>
+            </div>
+        </div>
+
+        <div class="loan-main">
+          <div class="cont">
+            <dl>
+              <dt ng-bind="loan_info.name"></dd>
+              <dd><span class="name">融资金额</span><span ng-bind="loan_info.amount|number:2"></span>元</dd>
+              <dd><span class="name">融资余额</span><span ng-bind="loan_info.left_amount|number:2"></span>元</dd>
+              <dd><span class="name">借款期限</span><span ng-bind="loan_info.period_name"></span></dd>
+              <dd><span class="name">还款方式</span><span ng-bind="repay_type.name"></span></dd>
+              <dd ng-if="loan_info.status=='3'">
+              	<span class="name">结束时间</span><span class="time">
+				<i class="time"></i><span class="borrow-end-time" data-time="{{loan_info.overdue_time_date}}" dy-counttime>倒计时加载中...</span>
+				</span></dd>
+            </dl>
+              <div class="progbar">
+                  <div class="prog prog-bg"></div>
+                  <div class="prog prog-rount"></div>
+                  <div class="prog prog-bg2"></div>
+                  <div class="prog prog-rount2"></div>
+                  <div class="prog-text" ng-bind="loan_info.progress|number:0"></div>
+                </div>
+                <!-- <div class="safe">
+                  <span class="col-xs-3"><a href="/wap/index/danbao"><i class="iconfont"></i>担保协议</a></span>
+                  <span class="col-xs-4"><a href="/wap/index/xieyifanben"><i class="iconfont"></i>投资合同范本</a></span>
+                  <span class="col-xs-4"><i class="icon"></i><span ng-bind="repay_type.name"></span></span>
+                </div> -->
+          </div>
+
+          <div class="loan-tabs" id="loanTabs">
+              <div class="hd">
+                <ul>
+                  <li class="on">项目详情</li>
+                  <li>借款人信息</li>
+                  <li>还款计划</li>
+                  <li>投资列表</li>
+                </ul>
+              </div>
+              <div class="bd">
+                <!--项目详情-->
+                <div class="bd-item on" ng-bind-html="loan_info.contents">
+
+                </div>
+
+                <!--借款人信息-->
+                <div class="bd-item bd-info">
+                    <div class="ibox">
+                      <div class="tit"><i class="iconfont">&#xe619;</i>借款人信息</div>
+                      <dl class="con">
+                        <dd><span class="name">借款人</span><span class="val" ng-bind="loan_info.member_name ||'无'"></span></dd>
+                        <dd><span class="name">性别</span><span class="val" ng-bind="member_info.gender ||'无'"></span></dd>
+                        <dd><span class="name">月收入</span><span class="val" ng-bind="member_info.monthly_income ||'无'"></span></dd>
+                        <dd><span class="name">结婚状况</span><span class="val" ng-bind="member_info.marry_name ||'无'"></span></dd>
+                        <dd><span class="name">学历</span><span class="val" ng-bind="member_info.edu_name ||'无'"></span></dd>
+                      </dl>
+                    </div>
+
+                    <div class="ibox">
+                      <div class="tit"><i class="iconfont">&#xe618;</i>工作信息</div>
+                      <dl class="con">
+                        <dd><span class="name">工作城市</span><span class="val" ng-bind="member_info.areas ||'无'"></span></dd>
+                        <dd><span class="name">工作性质</span><span class="val" ng-bind="member_info.industry_name ||'无'"></span></dd>
+                        <dd><span class="name">公司规模</span><span class="val" ng-bind="member_info.company_scale_name ||'无'"></span></dd>
+                        <dd><span class="name">岗位职位</span><span class="val" ng-bind="member_info.company_office_name ||'无'"></span></dd>
+                      </dl>
+                    </div>
+                </div>
+
+                <!--还款计划-->
+                <div class="bd-item bd-plan" ng-if="repay_plan.length>0">
+                    <div class="row row-head">
+                      <div class="col-xs-4">预期还款时间</div>
+                      <div class="col-xs-3">类型</div>
+                      <div class="col-xs-3">金额(元)</div>
+                      <div class="col-xs-2">状态</div>
+                    </div>
+                    <div class="row" ng-repeat="item in repay_plan">
+                      <div class="col-xs-4"><span class="g9" ng-bind="item.repay_date"></span></div>
+                      <div class="col-xs-3"><span class="g9" ng-bind="item.type_name"></span></div>
+                      <div class="col-xs-3" ng-bind="item.total"></div>
+                      <div class="col-xs-2"><span class="c-blue" ng-bind="item.repay_type_name">已还</span></div>
+                    </div>
+                </div>
+                <!--还款计划无数据-->
+                <div class="bd-item bd-list txt-cent pb10" ng-if="repay_plan.length==0">
+                  暂无数据
+                </div>
+
+                <!--投资列表-->
+                <div class="bd-item bd-list" ng-if="tender_list.length>0">
+                  <div class="row row-head">
+                    <div class="col-xs-4 name">投标人</div>
+                    <div class="col-xs-4 money">投资金额(元)</div>
+                    <div class="col-xs-4 time">投资时间</div>
+                  </div>
+
+                  <div class="row" ng-repeat="item in tender_list">
+                    <div class="col-xs-4 name" ng-bind="item.member_name"></div>
+                    <div class="col-xs-4 money" ng-bind="item.amount"></div>
+                    <div class="col-xs-4 time" ng-bind="item.add_time">2015-06-03</div>
+                  </div>
+
+                  <div class="row-foot fn-clear">
+                    <div class="fr">
+                      <div class="t1"><i class="iconfont">&#xe601;</i>投资总额：<span ng-bind="loan_info.credited_amount"></span>元</div>
+                      <div class="t2"><i class="iconfont">&#xe603;</i>投资人次： <span ng-bind="tender_count"></span>人</div>
+                    </div>
+                  </div>
+                </div>
+                <!--投资列表无数据-->
+                <div class="bd-item bd-list txt-cent pb10" ng-if="tender_list.length==0">
+                  暂无数据
+                </div>
+
+              </div>
+            </div>
+
+        <div class="loan-bid">
+          <i class="iconfont counter">&#xe60d;</i>
+          <a class="btn btn-blue btn-block" ng-if="loan_info.progress==100" disabled="disabled" ng-bind="'已满标'"></a>
+          <a ng-if="loan_info.progress!=100" class="btn btn-blue btn-block" href="/wap/loan/tenderLoanview#?id={{typeId.id}}">立即投资</a>
+        </div>
+      </div>
+      <!-- 加载状态 -->
+      <div class="loader" ng-class="{hid:loading}">
+        <div class="loader-inner"></div>
+      </div>
+    </div>
+    <!--理财计算器-->
+    <div class="overlay"></div>
+      <div class="ui-counter">
+        <div class="hd">
+          <span class="title">收益预估</span>
+          <i class="iconfont exit"></i>
+        </div>
+        <ul class="bd fn-clear">
+          <li>
+            <div class="item-input">
+              <input type="text" class="txt" id="amount" placeholder="投资金额" ng-model="counter.account" />
+              <span class="unit">元</span>
+            </div>
+          </li>
+          <li>
+            <div class="item-input">
+              <input type="text" class="txt" id="rate" placeholder="借款利率" ng-model="counter.lilv" />
+              <span class="unit">%</span>
+            </div>
+          </li>
+          <li>
+            <div class="item-input">
+              <input type="text" class="txt" id="time" placeholder="投资期限" ng-model="counter.times" />
+              <span class="unit">月</span>
+            </div>
+          </li>
+          <li>
+            <div class="item-input item-select">
+              <select id="mode" class="select" ng-model="counter.borrow_style">
+                <option value="month">等额本息</option>
+                <option value="end">到期还本还息</option>
+                <option value="endmonth">按月付息</option>
+                <option value="endmonths">按月付息到期还本</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <span class="name">产品预估收益：</span>
+            <span class="val" ng-bind="accountInterest"></span>
+          </li>
+          <li>
+            <span class="name">银行预估收益：</span>
+            <span class="val" ng-bind="bankAccountInterest"></span>
+          </li>
+        </ul>
+        <div class="fd">预估收益计算仅供参考，以实际收益为准</div>
+      </div>
+</section>
+
